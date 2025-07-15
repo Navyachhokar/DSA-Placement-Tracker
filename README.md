@@ -9,17 +9,31 @@ This repository tracks my daily progress, problem-solving, and revision.
 - Strengthen core data structures & algorithms
 - Practice coding problems daily
 - Prepare effectively for coding rounds & technical interviews
+- Track actual progress and revision history
 
 ---
 
+
+## ⚙️ Tools & Language
+
+- 🧠 Language: C++
+- 💻 IDE: VS Code
+- 🔗 Platform Tags: LeetCode, GeeksforGeeks, InterviewBit
+- ✅ Solutions include:  
+  - Brute Force  
+  - Better Approach (if applicable)  
+  - Optimal Approach  
+- 📊 Every solution includes time & space complexity
+
+  
+
 ## 📅 Weekly Progress Log
 
-| Date       | Topic       | Problems Solved | Notes                                       |
-|------------|-------------|-----------------|---------------------------------------------|
-| 2025-07-14 | Arrays       | 3               | Starting repo, added problems from this week|
-| 2025-07-15 | ⏳ Add Here  | ⏳ Add Here      | ⏳ Add Here                                  |
-
-> 📝 Note: Some problems solved before repo creation are included in relevant folders.
+| Date       | Topic  | Problems Solved                                                   | Notes                                      |
+|------------|--------|-------------------------------------------------------------------|--------------------------------------------|
+| 2025-07-14 | Arrays | LongestSubarraySumK_Positive, LongestSubarraySumK_Mixed, TwoSum,  |                                            |
+|            |        | Sort012 | Focused on sliding window & hashing-based problems      |                                            |
+| 2025-07-15 | Arrays | MajorityElement_Nby2 (to be added)                                |                                            |
 
 ---
 
@@ -44,12 +58,15 @@ Each folder includes:
 - My code with explanations (C++/Java/Python)
 - Optional notes per topic
 
-Example:
-Arrays/
-├── ReverseArray.cpp
-├── KadaneAlgo.cpp
-├── Notes.md
+DSA-Placement-Tracker/
+├── Arrays/
+│ ├── LongestSubarraySumK_Positive.cpp
+│ ├── LongestSubarraySumK_Mixed.cpp
+│ ├── TwoSum.cpp
+│ ├── Sort012.cpp
+├── README.md
 
+New folders will be added for: Strings, Hashing, Recursion, Linked Lists, etc.
 
 ---
 
