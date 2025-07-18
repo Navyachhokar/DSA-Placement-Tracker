@@ -31,6 +31,22 @@ public:
 // 🔍 Space Complexity: O(n) [prefix array]
 // ------------------------------------------------
 
+int maxSubArrayBetter(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> prefix(n, 0);
+    prefix[0] = nums[0];
+    for (int i = 1; i < n; i++)
+        prefix[i] = prefix[i - 1] + nums[i];
+
+    int maxSum = INT_MIN;
+    for (int i = 0; i < n; i++) {
+        for (int j = i; j < n; j++) {
+            int currSum = prefix[j] - (i > 0 ? prefix[i - 1] : 0);
+            maxSum = max(maxSum, currSum);
+        }
+    }
+    return maxSum;
+}
 
 
 // ------------------------------------------------
