@@ -29,11 +29,12 @@ This repository tracks my daily progress, problem-solving, and revision.
 
 ## 📅 Weekly Progress Log
 
-| Date       | Topic  | Problems Solved                                                   | Notes                                      |
-|------------|--------|-------------------------------------------------------------------|--------------------------------------------|
-| 2025-07-14 | Arrays | LongestSubarraySumK_Positive, LongestSubarraySumK_Mixed, TwoSum,  |                                            |
-|            |        | Sort012 | Focused on sliding window & hashing-based problems      |                                            |
-| 2025-07-15 | Arrays | MajorityElement_Nby2 (to be added)                                |                                            |
+| Date       | Topic  | Problems Solved                                                              | Notes                                       |
+|------------|--------|------------------------------------------------------------------------------|---------------------------------------------|
+| 2025-07-14 | Arrays | LongestSubarraySumK_Positive, LongestSubarraySumK_Mixed, TwoSum, Sort012    | Focused on sliding window & hashing         |
+| 2025-07-15 | Arrays | MajorityElement_Nby2                                                         | Covered frequency & Moore’s voting method   |
+| 2025-07-17 | Arrays | Kadane's Algorithm (Maximum Subarray Sum)                                    | Covered prefix sums & DP intuition          |
+| 2025-07-19 | Arrays | NextPermutation, BuyAndSellStockI, RearrangeBySign                           | Covered Greedy, Traversals & In-place ops   |
 
 ---
 
