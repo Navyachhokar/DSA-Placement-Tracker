@@ -35,6 +35,9 @@ This repository tracks my daily progress, problem-solving, and revision.
 | 2025-07-15 | Arrays | MajorityElement_Nby2                                                         | Covered frequency & Moore’s voting method   |
 | 2025-07-17 | Arrays | Kadane's Algorithm (Maximum Subarray Sum)                                    | Covered prefix sums & DP intuition          |
 | 2025-07-19 | Arrays | NextPermutation, BuyAndSellStockI, RearrangeBySign                           | Covered Greedy, Traversals & In-place ops   |
+| 2025-07-20 | Arrays | LeaderInAnArray, LongestConsecutiveSequence                                  | Covered reverse traversal, hashing, set ops |
+
+---
 
 ---
 
