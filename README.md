@@ -36,6 +36,8 @@ This repository tracks my daily progress, problem-solving, and revision.
 | 2025-07-17 | Arrays | Kadane's Algorithm (Maximum Subarray Sum)                                    | Covered prefix sums & DP intuition          |
 | 2025-07-19 | Arrays | NextPermutation, BuyAndSellStockI, RearrangeBySign                           | Covered Greedy, Traversals & In-place ops   |
 | 2025-07-20 | Arrays | LeaderInAnArray, LongestConsecutiveSequence                                  | Covered reverse traversal, hashing, set ops |
+| 2025-07-23 | Arrays | SetMatrixZeroes                                                              | Practiced matrix traversal & marking logic    |
+
 
 ---
 
