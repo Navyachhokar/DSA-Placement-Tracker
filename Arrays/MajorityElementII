@@ -1,0 +1,72 @@
+// 🔹 Problem: Majority Element II (> n/3 times)  
+// 🔗 Link: https://leetcode.com/problems/majority-element-ii/  
+// 🧠 Tags: Arrays, Hashing, Moore’s Voting Algorithm  
+// ✅ Status: Solved (Brute, Better, Optimal)
+
+// ------------------------------------------------
+// 🔸 Brute Force Approach
+// 💡 For each element, count frequency using nested loops
+// 🕒 Time Complexity: O(n^2)
+// 🔍 Space Complexity: O(1)
+// ------------------------------------------------
+vector<int> majorityElementBrute(vector<int>& nums) {
+    vector<int> ans;
+    int n = nums.size();
+    for (int i = 0; i < n; i++) {
+        if (find(ans.begin(), ans.end(), nums[i]) != ans.end()) continue; // avoid duplicates
+        int count = 0;
+        for (int j = 0; j < n; j++) {
+            if (nums[j] == nums[i]) count++;
+        }
+        if (count > n / 3) ans.push_back(nums[i]);
+    }
+    return ans;
+}
+
+// ------------------------------------------------
+// 🔸 Better Approach
+// 💡 Use HashMap to count occurrences
+// 🕒 Time Complexity: O(n)
+// 🔍 Space Complexity: O(n)
+// ------------------------------------------------
+vector<int> majorityElementBetter(vector<int>& nums) {
+    unordered_map<int, int> freq;
+    int n = nums.size();
+    for (int num : nums) freq[num]++;
+    vector<int> ans;
+    for (auto& [key, val] : freq) {
+        if (val > n / 3) ans.push_back(key);
+    }
+    return ans;
+}
+
+// ------------------------------------------------
+// 🔸 Optimal Approach (Extended Moore’s Voting Algorithm)
+// 💡 At most 2 elements can be > n/3 times; track two candidates and verify
+// 🕒 Time Complexity: O(n)
+// 🔍 Space Complexity: O(1)
+// ------------------------------------------------
+vector<int> majorityElementOptimal(vector<int>& nums) {
+    int n = nums.size();
+    int cnt1 = 0, cnt2 = 0, el1 = INT_MIN, el2 = INT_MIN;
+    
+    for (int num : nums) {
+        if (num == el1) cnt1++;
+        else if (num == el2) cnt2++;
+        else if (cnt1 == 0) { el1 = num; cnt1 = 1; }
+        else if (cnt2 == 0) { el2 = num; cnt2 = 1; }
+        else { cnt1--; cnt2--; }
+    }
+    
+    // Verify the candidates
+    cnt1 = cnt2 = 0;
+    for (int num : nums) {
+        if (num == el1) cnt1++;
+        else if (num == el2) cnt2++;
+    }
+    
+    vector<int> ans;
+    if (cnt1 > n / 3) ans.push_back(el1);
+    if (cnt2 > n / 3) ans.push_back(el2);
+    return ans;
+}
