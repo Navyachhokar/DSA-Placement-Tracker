@@ -1,0 +1,64 @@
+// 🔹 Problem: Pascal's Triangle  
+// 🔗 Link: https://leetcode.com/problems/pascals-triangle/  
+// 🧠 Tags: Arrays, Dynamic Programming, Math  
+// ✅ Status: Solved (Brute, Better, Optimal)
+
+// ------------------------------------------------
+// 🔸 Brute Force Approach
+// 💡 For each element, compute nCr using factorial formula
+// 🕒 Time Complexity: O(n^3)  [Factorial computation for each cell]
+// 🔍 Space Complexity: O(1)   [Excluding result storage]
+// ------------------------------------------------
+long long factorial(int n) {
+    long long fact = 1;
+    for (int i = 1; i <= n; i++) fact *= i;
+    return fact;
+}
+
+vector<vector<int>> generateBrute(int numRows) {
+    vector<vector<int>> pascal(numRows);
+    for (int i = 0; i < numRows; i++) {
+        pascal[i].resize(i + 1);
+        for (int j = 0; j <= i; j++) {
+            pascal[i][j] = factorial(i) / (factorial(j) * factorial(i - j));
+        }
+    }
+    return pascal;
+}
+
+// ------------------------------------------------
+// 🔸 Better Approach
+// 💡 Use nCr formula but build each row iteratively to avoid factorial recomputation
+// 🕒 Time Complexity: O(n^2)
+// 🔍 Space Complexity: O(1) [Excluding result storage]
+// ------------------------------------------------
+vector<vector<int>> generateBetter(int numRows) {
+    vector<vector<int>> pascal(numRows);
+    for (int i = 0; i < numRows; i++) {
+        pascal[i].resize(i + 1);
+        pascal[i][0] = pascal[i][i] = 1;
+        for (int j = 1; j < i; j++) {
+            pascal[i][j] = pascal[i - 1][j - 1] + pascal[i - 1][j];
+        }
+    }
+    return pascal;
+}
+
+// ------------------------------------------------
+// 🔸 Optimal Approach
+// 💡 Use direct formula: nCr = prev * (n - r) / (r + 1) while building rows
+// 🕒 Time Complexity: O(n^2)
+// 🔍 Space Complexity: O(1) [Excluding result storage]
+// ------------------------------------------------
+vector<vector<int>> generateOptimal(int numRows) {
+    vector<vector<int>> pascal(numRows);
+    for (int i = 0; i < numRows; i++) {
+        long long val = 1;
+        pascal[i].push_back(1);
+        for (int j = 1; j <= i; j++) {
+            val = val * (i - j + 1) / j;
+            pascal[i].push_back(val);
+        }
+    }
+    return pascal;
+}
